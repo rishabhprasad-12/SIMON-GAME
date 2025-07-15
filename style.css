@@ -1,0 +1,164 @@
+body {
+  position: relative;
+  text-align: center;
+}
+
+p {
+  font-size: large;
+}
+
+/* Main game circle */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 420px;
+  width: 420px;
+  margin: 50px auto;
+  background: #222;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  position: relative;
+  flex-wrap: wrap;
+  border: 8px solid #222;
+}
+
+/* Quadrant buttons */
+.btn {
+  height: 210px;
+  width: 210px;
+  position: absolute;
+  border: 10px solid #222;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.red {
+  background-color: #e53935;
+  border-top-left-radius: 100% 100%;
+  top: 0;
+  left: 0;
+}
+
+.blue {
+  background-color: #1e88e5;
+  border-bottom-right-radius: 100% 100%;
+  bottom: 0;
+  right: 0;
+}
+
+.yellow {
+  background-color: #fbc02d;
+  border-bottom-left-radius: 100% 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.green {
+  background-color: #43a047;
+  border-top-right-radius: 100% 100%;
+  top: 0;
+  right: 0;
+}
+
+/* Center circle for score/title */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  border: 4px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1.3em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.center h3 {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Button flash effects */
+.flash {
+  filter: brightness(2.2);
+}
+
+.userflash {
+  filter: brightness(1.5) drop-shadow(0 0 8px #fff);
+}
+
+/* Responsive for mobile */
+@media (max-width: 500px) {
+  .container {
+    height: 260px;
+    width: 260px;
+  }
+  .btn {
+    height: 130px;
+    width: 130px;
+  }
+  .center {
+    height: 90px;
+    width: 90px;
+    font-size: 0.8em;
+  }
+  #levelText, #scoreText {
+    font-size: small;
+    margin: 0;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#startBtn {
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  border-radius: 8px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
